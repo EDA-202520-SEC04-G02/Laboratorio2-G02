@@ -59,7 +59,7 @@ def print_menu():
     # Agregue la opción 3 para cargar los tags de los libros.
     # Pueede guiarse de las opciones 1 y 2.
     print("3- Cargar los Tags de Libros")
-    print("0- Salir")
+    print("0- Salir") 
 
 
 def load_books(app):
