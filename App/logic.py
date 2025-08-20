@@ -30,7 +30,7 @@ import csv
 import os
 
 # Importar el modulo de la estructura de datos set
-from DataStructures import Set as set
+from DataStructures.Set import set as set
 
 # Directorio de datos de los archivos
 data_dir = os.path.dirname(os.path.realpath('__file__')) + '/Data/'
@@ -133,6 +133,14 @@ def load_books_tags(catalog, filename):
     :rtype: int
     """
     # TODO: Mods de Est-1, Est-2 y Est-3 en el Lab 2
+    booktagfile = os.path.join(data_dir, filename)
+    input_file = csv.DictReader(open(booktagfile, encoding="utf-8"))
+    catalog = create_book_tag_list(catalog)
+    for booktag in input_file:
+        add_book_tag(catalog, booktag)
+    return book_tag_size(catalog)
+
+    
     
     tf = os.path.join(data_dir, filename)
     input_file = csv.DictReader(open(tf, encoding="utf-8"))
